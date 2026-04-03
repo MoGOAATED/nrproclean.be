@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nettoyage de bureaux — NR PROCLEAN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#080D1A;--card:#0F1628;--cyan:#00D4D8;--cyan2:#00B8BC;--cdim:rgba(0,212,216,0.12);--muted:rgba(255,255,255,0.55);--border:rgba(255,255,255,0.08); }
+    *,::before,::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Onest',sans-serif;scroll-behavior:smooth}
+    body{background:var(--bg);color:#fff;font-size:16px;line-height:1.6;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(8,13,26,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px}
+    .nav-logo img{height:38px}
+    .nav-back{font-size:14px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.18s}
+    .nav-back:hover{color:#fff}
+    .nav-cta{background:var(--cyan);color:#080D1A;font-weight:700;font-size:14px;padding:10px 22px;border-radius:7px;text-decoration:none;transition:opacity 0.18s,transform 0.15s}
+    .nav-cta:hover{opacity:0.85;transform:translateY(-1px)}
+    .page-hero{padding:140px 80px 80px;background:var(--bg);position:relative;overflow:hidden}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(0,212,216,0.06) 0%,transparent 55%);pointer-events:none}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px}
+    h1{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-bottom:24px}
+    h1 em{font-style:normal;color:var(--cyan)}
+    .lead{color:var(--muted);font-size:17px;line-height:1.8;max-width:620px}
+    .content{padding:80px;max-width:1200px;margin:0 auto}
+    .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:80px}
+    .section-img{border-radius:18px;overflow:hidden;height:420px}
+    .section-img img{width:100%;height:100%;object-fit:cover}
+    h2{font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:20px}
+    p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:16px}
+    .benefits{display:flex;flex-direction:column;gap:14px;margin:28px 0}
+    .benefit{display:flex;align-items:flex-start;gap:14px;padding:20px 22px;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:border-color 0.18s}
+    .benefit:hover{border-color:rgba(0,212,216,0.25)}
+    .benefit-icon{width:36px;height:36px;border-radius:9px;background:var(--cdim);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .benefit-icon svg{width:17px;height:17px;stroke:var(--cyan);fill:none;stroke-width:1.8}
+    .benefit-text h4{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+    .benefit-text p{font-size:13px;color:var(--muted);line-height:1.6;margin:0}
+    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:48px 0}
+    .step{background:#f5f6f8;border-radius:14px;padding:28px 22px}
+    .step-num{width:32px;height:32px;border-radius:8px;background:#0a0f1a;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--cyan);margin-bottom:16px}
+    .step h4{font-size:15px;font-weight:700;color:#0a0f1a;margin-bottom:8px}
+    .step p{font-size:13px;color:#555;line-height:1.65;margin:0}
+    .cta-block{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:52px;text-align:center;margin-top:80px}
+    .cta-block h3{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px}
+    .cta-block p{color:var(--muted);max-width:500px;margin:0 auto 32px}
+    .btn-cyan{background:var(--cyan);color:#080D1A;font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;display:inline-block;transition:opacity 0.18s,transform 0.15s}
+    .btn-cyan:hover{opacity:0.87;transform:translateY(-2px)}
+    footer-small{display:block;text-align:center;padding:32px;font-size:13px;color:var(--muted);border-top:1px solid var(--border);margin-top:80px}
+    @media(max-width:900px){nav{padding:0 24px}.page-hero{padding:100px 24px 56px}.content{padding:40px 24px}.section-grid{grid-template-columns:1fr}.section-img{height:280px}.process-steps{grid-template-columns:1fr 1fr}.cta-block{padding:36px 24px}}
+    @media(max-width:600px){.process-steps{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html"><img src="../Brand_assets/version bleu (1).PNG" alt="NR PROCLEAN" /></a>
+  <a class="nav-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> Retour au site</a>
+  <a href="../index.html#contact" class="nav-cta">Demander un devis</a>
+</nav>
+
+<section class="page-hero">
+  <div class="eyebrow">Nos services</div>
+  <h1>Nettoyage de <em>bureaux</em><br/>et espaces professionnels</h1>
+  <p class="lead">Un environnement de travail propre améliore la productivité, réduit les arrêts maladie et valorise l'image de votre entreprise. NR PROCLEAN s'en charge discrètement et efficacement.</p>
+</section>
+
+<div class="content">
+  <div class="section-grid">
+    <div>
+      <h2>Un service discret, rigoureux et adapté à votre rythme</h2>
+      <p>Nos équipes interviennent avant, pendant ou après vos heures de bureau — selon votre organisation. Chaque prestation est réalisée selon un protocole standardisé et documenté.</p>
+      <p>Que vous gériez un open-space de 200 m² ou un siège social de plusieurs étages, nous adaptons la fréquence, les horaires et les produits à vos besoins spécifiques.</p>
+      <div class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div class="benefit-text"><h4>Plannings flexibles</h4><p>Intervention quotidienne, hebdomadaire ou sur mesure selon votre activité.</p></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="benefit-text"><h4>Équipes formées &amp; encadrées</h4><p>Personnel certifié, tenu de travail NR PROCLEAN, interlocuteur dédié.</p></div>
+        </div>
+        <div class="benefit">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="benefit-text"><h4>Produits certifiés écologiques</h4><p>100% de nos produits sont biodégradables et respectueux de l'environnement.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-img">
+      <img src="../Brand_assets/IMG_1518.jpg" alt="Nettoyage de bureaux NR PROCLEAN" />
+    </div>
+  </div>
+
+  <h2 style="text-align:center;margin-bottom:12px;">Ce que nous nettoyons</h2>
+  <p style="text-align:center;max-width:540px;margin:0 auto 40px;">Chaque zone de votre espace de travail est couverte par notre protocole d'intervention.</p>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">①</div><h4>Open-space &amp; bureaux</h4><p>Dépoussiérage des surfaces, nettoyage des écrans, aspiration et lavage des sols.</p></div>
+    <div class="step"><div class="step-num">②</div><h4>Salles de réunion</h4><p>Tables, chaises, tableau blanc, vitres intérieures, matériel de conférence.</p></div>
+    <div class="step"><div class="step-num">③</div><h4>Sanitaires &amp; cuisine</h4><p>Désinfection complète, réapprovisionnement des consommables, nettoyage des équipements.</p></div>
+    <div class="step"><div class="step-num">④</div><h4>Accueil &amp; circulations</h4><p>Hall d'entrée, couloirs, ascenseurs, escaliers — première impression garantie.</p></div>
+  </div>
+
+  <div class="cta-block">
+    <h3>Prêt à déléguer l'entretien de vos bureaux ?</h3>
+    <p>Contactez-nous pour une visite de site gratuite et une proposition sous 48h ouvrables.</p>
+    <a href="../index.html#contact" class="btn-cyan">Demander un devis gratuit →</a>
+  </div>
+</div>
+
+<footer-small>© 2026 NR PROCLEAN — <a href="tel:+3248444242" style="color:var(--cyan);text-decoration:none;">+32 (0) 484 44 24 21</a> · <a href="mailto:contact@nrproclean.be" style="color:var(--cyan);text-decoration:none;">contact@nrproclean.be</a></footer-small>
+</body>
+</html>
