@@ -465,6 +465,76 @@
       font-size: 13px; color: var(--muted);
     }
 
+    /* ─── PARTNERS ─── */
+    .partners-section {
+      background: var(--bg2);
+      padding: 72px 80px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .partners-eyebrow {
+      text-align: center;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 48px;
+    }
+    .partners-logos {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .partner-item {
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px 28px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.18s;
+      height: 80px;
+      min-width: 140px;
+      max-width: 200px;
+    }
+    .partner-item:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-2px);
+    }
+    .partner-item img {
+      max-height: 40px;
+      max-width: 140px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(1) brightness(1.8) contrast(0.85);
+      opacity: 0.75;
+      transition: filter 0.2s, opacity 0.2s;
+    }
+    .partner-item:hover img {
+      filter: grayscale(0) brightness(1) contrast(1);
+      opacity: 1;
+    }
+    /* Rensiwez: crop to logo in top-right corner */
+    .partner-item .logo-rensiwez {
+      object-fit: cover;
+      object-position: 88% 8%;
+      width: 140px;
+      height: 40px;
+      max-width: 140px;
+    }
+    /* Dark background logos (Durbuy Music) — invert to show on dark bg */
+    .partner-item img.logo-dark-bg {
+      filter: grayscale(1) invert(1) brightness(1.4) contrast(0.85);
+      opacity: 0.75;
+    }
+    .partner-item:hover img.logo-dark-bg {
+      filter: grayscale(0) invert(1) brightness(1.2) contrast(1);
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      .partners-section { padding: 56px 24px; }
+      .partner-item { min-width: 120px; padding: 16px 20px; }
+    }
+
     /* ─── RAINBOW BORDER BUTTON ─── */
     .btn-primary::before,
     .btn-primary::after {
@@ -671,6 +741,32 @@
     <a href="services/pharmacies.html" style="display:inline-block;background:#fff;border:1px solid #e2e4ea;border-radius:40px;padding:10px 20px;font-size:13px;font-weight:600;color:#333;text-decoration:none;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.borderColor='#00D4D8';this.style.color='#00B8BC'" onmouseout="this.style.borderColor='#e2e4ea';this.style.color='#333'">Pharmacies</a>
     <a href="services/cabinet-medical.html" style="display:inline-block;background:#fff;border:1px solid #e2e4ea;border-radius:40px;padding:10px 20px;font-size:13px;font-weight:600;color:#333;text-decoration:none;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.borderColor='#00D4D8';this.style.color='#00B8BC'" onmouseout="this.style.borderColor='#e2e4ea';this.style.color='#333'">Cabinet médical &amp; dentaire</a>
     <a href="services/autres.html" style="display:inline-block;background:#fff;border:1px solid #e2e4ea;border-radius:40px;padding:10px 20px;font-size:13px;font-weight:600;color:#333;text-decoration:none;transition:border-color 0.18s,color 0.18s;" onmouseover="this.style.borderColor='#00D4D8';this.style.color='#00B8BC'" onmouseout="this.style.borderColor='#e2e4ea';this.style.color='#333'">Autres prestations sur demande →</a>
+  </div>
+</section>
+
+
+<!-- ─────────────── PARTENAIRES ─────────────── -->
+<section class="partners-section" aria-label="Nos partenaires" data-reveal>
+  <p class="partners-eyebrow">Ils nous font confiance</p>
+  <div class="partners-logos">
+    <a href="https://www.lescabanesderensiwez.be" target="_blank" rel="noopener" class="partner-item" aria-label="Les Cabanes de Rensiwez">
+      <img src="Brand_assets/partners/rensiwez.jpg" alt="Les Cabanes de Rensiwez" class="logo-rensiwez" />
+    </a>
+    <a href="https://www.durbuymusic.com" target="_blank" rel="noopener" class="partner-item" aria-label="Durbuy Music">
+      <img src="Brand_assets/partners/durbuy-music.avif" alt="Durbuy Music" class="logo-dark-bg" />
+    </a>
+    <a href="https://www.lescabanesdesdolimarts.com" target="_blank" rel="noopener" class="partner-item" aria-label="Les Cabanes des Dolimarts">
+      <img src="Brand_assets/partners/dolimarts.jpg" alt="Les Cabanes des Dolimarts" />
+    </a>
+    <a href="https://www.haltinne.be" target="_blank" rel="noopener" class="partner-item" aria-label="Le Château de Haltinne">
+      <img src="Brand_assets/partners/haltinne.avif" alt="Le Château de Haltinne" />
+    </a>
+    <a href="https://www.psychologue-dewe.be" target="_blank" rel="noopener" class="partner-item" aria-label="Catherine Dewé Psychologue">
+      <img src="Brand_assets/partners/psychologue-dewe.png" alt="Cabinet Catherine Dewé" />
+    </a>
+    <a href="https://woodwide.be" target="_blank" rel="noopener" class="partner-item" aria-label="Wood Wide">
+      <img src="Brand_assets/partners/woodwide.svg" alt="Wood Wide" />
+    </a>
   </div>
 </section>
 
