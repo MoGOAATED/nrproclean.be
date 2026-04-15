@@ -472,67 +472,44 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
-    .partners-eyebrow {
+    .partners-title {
       text-align: center;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--muted);
-      margin-bottom: 48px;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--cyan);
+      margin-bottom: 52px;
+      line-height: 1.15;
     }
     .partners-logos {
       display: flex; align-items: center; justify-content: center;
-      flex-wrap: wrap; gap: 16px;
+      flex-wrap: wrap; gap: 20px;
     }
     .partner-item {
       display: flex; align-items: center; justify-content: center;
-      padding: 20px 28px;
+      padding: 24px 32px;
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
       border-radius: 14px;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, transform 0.18s;
-      height: 80px;
-      min-width: 140px;
-      max-width: 200px;
-    }
-    .partner-item:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.18);
-      transform: translateY(-2px);
+      height: 100px;
+      min-width: 160px;
+      max-width: 220px;
     }
     .partner-item img {
-      max-height: 40px;
-      max-width: 140px;
+      max-height: 56px;
+      max-width: 160px;
       width: auto;
       height: auto;
       object-fit: contain;
-      filter: grayscale(1) brightness(1.8) contrast(0.85);
-      opacity: 0.75;
-      transition: filter 0.2s, opacity 0.2s;
-    }
-    .partner-item:hover img {
-      filter: grayscale(0) brightness(1) contrast(1);
-      opacity: 1;
-    }
-    /* Rensiwez: crop to logo in top-right corner */
-    .partner-item .logo-rensiwez {
-      object-fit: cover;
-      object-position: 88% 8%;
-      width: 140px;
-      height: 40px;
-      max-width: 140px;
     }
     /* Dark background logos (Durbuy Music) — invert to show on dark bg */
     .partner-item img.logo-dark-bg {
-      filter: grayscale(1) invert(1) brightness(1.4) contrast(0.85);
-      opacity: 0.75;
-    }
-    .partner-item:hover img.logo-dark-bg {
-      filter: grayscale(0) invert(1) brightness(1.2) contrast(1);
-      opacity: 1;
+      filter: invert(1) brightness(1.2);
     }
     @media (max-width: 768px) {
       .partners-section { padding: 56px 24px; }
-      .partner-item { min-width: 120px; padding: 16px 20px; }
+      .partner-item { min-width: 130px; padding: 20px 24px; height: 90px; }
+      .partner-item img { max-height: 48px; max-width: 130px; }
     }
 
     /* ─── RAINBOW BORDER BUTTON ─── */
@@ -747,26 +724,26 @@
 
 <!-- ─────────────── PARTENAIRES ─────────────── -->
 <section class="partners-section" aria-label="Nos partenaires" data-reveal>
-  <p class="partners-eyebrow">Ils nous font confiance</p>
+  <h2 class="partners-title">Ils nous font confiance</h2>
   <div class="partners-logos">
-    <a href="https://www.lescabanesderensiwez.be" target="_blank" rel="noopener" class="partner-item" aria-label="Les Cabanes de Rensiwez">
-      <img src="Brand_assets/partners/rensiwez.jpg" alt="Les Cabanes de Rensiwez" class="logo-rensiwez" />
-    </a>
-    <a href="https://www.durbuymusic.com" target="_blank" rel="noopener" class="partner-item" aria-label="Durbuy Music">
+    <div class="partner-item">
+      <img src="Brand_assets/partners/rensiwez.jpg" alt="Les Cabanes de Rensiwez" />
+    </div>
+    <div class="partner-item">
       <img src="Brand_assets/partners/durbuy-music.avif" alt="Durbuy Music" class="logo-dark-bg" />
-    </a>
-    <a href="https://www.lescabanesdesdolimarts.com" target="_blank" rel="noopener" class="partner-item" aria-label="Les Cabanes des Dolimarts">
+    </div>
+    <div class="partner-item">
       <img src="Brand_assets/partners/dolimarts.jpg" alt="Les Cabanes des Dolimarts" />
-    </a>
-    <a href="https://www.haltinne.be" target="_blank" rel="noopener" class="partner-item" aria-label="Le Château de Haltinne">
+    </div>
+    <div class="partner-item">
       <img src="Brand_assets/partners/haltinne.avif" alt="Le Château de Haltinne" />
-    </a>
-    <a href="https://www.psychologue-dewe.be" target="_blank" rel="noopener" class="partner-item" aria-label="Catherine Dewé Psychologue">
+    </div>
+    <div class="partner-item">
       <img src="Brand_assets/partners/psychologue-dewe.png" alt="Cabinet Catherine Dewé" />
-    </a>
-    <a href="https://woodwide.be" target="_blank" rel="noopener" class="partner-item" aria-label="Wood Wide">
+    </div>
+    <div class="partner-item">
       <img src="Brand_assets/partners/woodwide.svg" alt="Wood Wide" />
-    </a>
+    </div>
   </div>
 </section>
 
