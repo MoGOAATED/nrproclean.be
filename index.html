@@ -10,6 +10,23 @@
   gtag('js', new Date());
   gtag('config', 'AW-18156226667');
 </script>
+<!-- Event snippet for Envoi de formulaire de lead conversion page -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18156226667/vwf-CKezvKscEOuQyNFD',
+    'value': 1.0,
+    'currency': 'EUR',
+    'event_callback': callback
+  });
+  return false;
+}
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nettoyage professionnel à Liège &amp; Belgique | NR PROCLEAN</title>
@@ -990,7 +1007,7 @@ async function submitContactForm() {
     });
 
     if (response.ok) {
-      gtag('event', 'conversion', { 'send_to': 'AW-18156226667/vwf-CKezvKscEOuQyNFD', 'value': 1.0, 'currency': 'EUR' });
+      gtag_report_conversion();
       document.getElementById('contact-form').style.display = 'none';
       document.getElementById('contact-success').style.display = 'block';
     } else {
