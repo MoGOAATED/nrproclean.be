@@ -2,6 +2,9 @@
 
 <html lang="fr">
 <head>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('S0jPMTgt1hFkbg3LQ');</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18156226667"></script>
 <script>
@@ -1150,6 +1153,9 @@ async function submitContactForm() {
 
     if (response.ok) {
       gtag_report_conversion();
+      emailjs.send('service_jqp0zv8', 'template_5labfae', { name, email })
+        .then(() => console.log('EmailJS: confirmation envoyée à', email))
+        .catch(err => console.error('EmailJS erreur:', JSON.stringify(err)));
       document.getElementById('contact-form').style.display = 'none';
       document.getElementById('contact-success').style.display = 'block';
     } else {
