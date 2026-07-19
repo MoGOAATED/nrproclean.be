@@ -5,32 +5,7 @@
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('S0jPMTgt1hFkbg3LQ');</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18156226667"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18156226667');
-  gtag('config', 'G-M0GP40T5SG');
-</script>
-<!-- Event snippet for Envoi de formulaire de lead conversion page -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18156226667/vwf-CKezvKscEOuQyNFD',
-    'value': 1.0,
-    'currency': 'EUR',
-    'event_callback': callback
-  });
-  return false;
-}
-</script>
+<script src="cookie-consent.js"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nettoyage professionnel à Liège | NR PROCLEAN</title>
@@ -42,7 +17,7 @@ function gtag_report_conversion(url) {
 <link href="/favicon-nr.svg" rel="icon" type="image/svg+xml"/>
 <link href="/favicon-nr.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="/favicon-nr.png" rel="apple-touch-icon"/>
-<link rel="preload" as="image" href="Brand_assets/ultra_realistic_professional_c_Nano_Banana_2_81813.webp" type="image/webp"/>
+<link rel="preload" as="image" href="Brand_assets/stock/hero-office.webp" type="image/webp"/>
 <!-- Geo (SEO local) -->
 <meta content="BE-WLG" name="geo.region"/>
 <meta content="Liège, Grivegnée" name="geo.placename"/>
@@ -131,6 +106,7 @@ function gtag_report_conversion(url) {
     --card:  #0F1628;
     --cyan:  #00D4D8;
     --cyan2: #00B8BC;
+    --cyan-dark: #006A6C;
     --cdim:  rgba(0,212,216,0.12);
     --text:  #ffffff;
     --muted: rgba(255,255,255,0.55);
@@ -424,7 +400,7 @@ function gtag_report_conversion(url) {
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-  .stat-num { font-size: clamp(2.8rem, 4vw, 3.8rem); font-weight: 900; color: var(--cyan); letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
+  .stat-num { font-size: clamp(2.8rem, 4vw, 3.8rem); font-weight: 900; color: var(--cyan-dark); letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
   .stat-label { font-size: 17px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
 
   /* ─── AGENTS EN ACTION (DARK) ─── */
@@ -475,7 +451,7 @@ function gtag_report_conversion(url) {
     background: var(--light);
     padding: 100px 80px;
   }
-  .certs-section .eyebrow { color: var(--cyan2); }
+  .certs-section .eyebrow { color: var(--cyan-dark); }
   .certs-section .section-title { color: #0a0f1a; margin-bottom: 14px; }
   .certs-section .section-body { color: #555; max-width: 500px; margin-bottom: 52px; }
   .certs-row { display: flex; gap: 32px; flex-wrap: wrap; align-items: center; }
@@ -494,6 +470,47 @@ function gtag_report_conversion(url) {
   .cert-badge.iso2 { background: #e6f8f8; color: #007b80; }
   .cert-info h4 { font-size: 16px; font-weight: 800; color: #0a0f1a; margin-bottom: 4px; }
   .cert-info p { font-size: 13px; color: #666; line-height: 1.5; max-width: 200px; }
+
+  /* ─── TÉMOIGNAGES ─── */
+  .testimonials-section { background: #fff; padding: 100px 80px; }
+  .testimonials-section .eyebrow { color: var(--cyan-dark); }
+  .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 48px; }
+  .testimonial-card {
+    background: linear-gradient(155deg, var(--card) 0%, var(--bg2) 100%);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+    padding: 32px 30px; display: flex; flex-direction: column; gap: 18px;
+    position: relative; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.14), 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 42px rgba(0,212,216,0.16), 0 4px 14px rgba(0,0,0,0.16);
+  }
+  .testimonial-card::before {
+    content: '\201C'; position: absolute; top: -18px; right: 18px;
+    font-size: 130px; font-weight: 900; line-height: 1; font-family: Georgia, 'Times New Roman', serif;
+    color: rgba(255,255,255,0.045); pointer-events: none;
+  }
+  .star-row { display: flex; gap: 3px; position: relative; z-index: 1; }
+  .star-row svg { width: 16px; height: 16px; fill: #FBBC04; }
+  .testimonial-quote { font-size: 15px; color: rgba(255,255,255,0.88); line-height: 1.72; position: relative; z-index: 1; }
+  .testimonial-footer {
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 12px;
+    padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.09); position: relative; z-index: 1;
+  }
+  .testimonial-attribution { font-size: 13px; color: var(--cyan); font-weight: 700; }
+  .testimonial-attribution span { display: block; font-weight: 400; color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 3px; }
+  .google-badge { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; letter-spacing: 0.02em; color: rgba(255,255,255,0.55); white-space: nowrap; flex-shrink: 0; }
+  .google-badge svg { width: 13px; height: 13px; fill: #FBBC04; flex-shrink: 0; }
+  .reassurance-row { display: flex; flex-wrap: wrap; gap: 32px; padding-top: 36px; border-top: 1px solid rgba(0,0,0,0.08); }
+  .reassurance-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #333; font-weight: 600; }
+  .reassurance-item svg { width: 20px; height: 20px; stroke: var(--cyan-dark); fill: none; stroke-width: 2; flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .testimonials-section { padding: 72px 24px; }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .reassurance-row { gap: 18px; flex-direction: column; align-items: flex-start; }
+  }
 
   /* ─── FAQ (DARK) ─── */
   .faq-section {
@@ -551,9 +568,11 @@ function gtag_report_conversion(url) {
   .social-btn:active { opacity: 0.8; }
   .footer-bottom {
     border-top: 1px solid var(--border); padding-top: 28px;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between;
     font-size: 13px; color: var(--muted);
   }
+  .footer-bottom a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .footer-bottom a:hover, .footer-bottom a:focus-visible { color: var(--cyan); }
 
   /* ─── RAINBOW BORDER BUTTON ─── */
   .btn-primary::before, .btn-primary::after {
@@ -690,7 +709,7 @@ function gtag_report_conversion(url) {
   </div>
   <div class="hero-right">
     <div class="hero-right-overlay"></div>
-    <img alt="Agent NR PROCLEAN en intervention professionnelle" src="Brand_assets/ultra_realistic_professional_c_Nano_Banana_2_81813.webp" fetchpriority="high"/>
+    <img alt="Bureaux professionnels entretenus par NR PROCLEAN" src="Brand_assets/stock/hero-office.webp" fetchpriority="high"/>
   </div>
 </section>
 
@@ -875,7 +894,7 @@ function gtag_report_conversion(url) {
   <div class="agents-grid">
     <!-- Photo réelle — agent bureau -->
     <div class="agent-card" data-reveal="" style="transition-delay:0.1s">
-      <img alt="Agent NR PROCLEAN en intervention dans des bureaux professionnels" src="Brand_assets/ultra_realistic_professional_c_Nano_Banana_2_81813.webp" loading="lazy"/>
+      <img alt="Espace de bureaux professionnel entretenu par NR PROCLEAN" src="Brand_assets/stock/hero-office.webp" loading="lazy"/>
       <div class="agent-overlay"></div>
       <span class="agent-tag">Bureaux</span>
       <div class="agent-label">
@@ -940,6 +959,87 @@ function gtag_report_conversion(url) {
         <h4 data-i18n="index.certinfo.h4_vca">VCA ★★</h4>
         <p data-i18n="index.certinfo.p_sécurité_santé_et_environ">Sécurité, santé et environnement pour les prestataires</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── TÉMOIGNAGES ─────────────── -->
+<section aria-label="Témoignages clients" class="testimonials-section" id="temoignages">
+  <div class="eyebrow" data-reveal="">Avis clients</div>
+  <h2 class="section-title dark" data-reveal="" style="transition-delay:0.1s">Ce que nos clients en disent</h2>
+  <p class="section-body dark" data-reveal="" style="margin-top:14px;margin-bottom:52px;transition-delay:0.18s">
+    Des retours vérifiés, laissés par nos clients sur Google. Vous êtes client NR PROCLEAN ? Partagez votre expérience à <a href="mailto:contact@nrproclean.be" style="color:var(--cyan-dark);">contact@nrproclean.be</a>.
+  </p>
+  <div class="testimonial-grid">
+    <div class="testimonial-card" data-reveal="" style="transition-delay:0.25s">
+      <div class="star-row" aria-label="Note 5 sur 5 étoiles" role="img">
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+      </div>
+      <p class="testimonial-quote">Nous faisons appel à NR PROCLEAN pour l'entretien de nos bureaux depuis plusieurs mois et nous en sommes très contents. Travail sérieux, équipe discrète et toujours à l'écoute. Je recommande vivement !</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-attribution">Client professionnel<span>Nettoyage de bureaux</span></div>
+        <div class="google-badge"><svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>Google</div>
+      </div>
+    </div>
+    <div class="testimonial-card" data-reveal="" style="transition-delay:0.35s">
+      <div class="star-row" aria-label="Note 5 sur 5 étoiles" role="img">
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+      </div>
+      <p class="testimonial-quote">Depuis un an, nous faisons appel à NR PROCLEAN pour l'entretien d'une partie de nos logements. La qualité de leurs services est à la hauteur de nos attentes.</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-attribution">Manager, secteur hôtelier<span>Durbuy</span></div>
+        <div class="google-badge"><svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>Google</div>
+      </div>
+    </div>
+    <div class="testimonial-card" data-reveal="" style="transition-delay:0.45s">
+      <div class="star-row" aria-label="Note 5 sur 5 étoiles" role="img">
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+      </div>
+      <p class="testimonial-quote">Équipe dynamique, professionnelle, disponible et fiable. Bravo !</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-attribution">Propriétaire de gîte<span>Ardennes</span></div>
+        <div class="google-badge"><svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>Google</div>
+      </div>
+    </div>
+    <div class="testimonial-card" data-reveal="" style="transition-delay:0.55s">
+      <div class="star-row" aria-label="Note 5 sur 5 étoiles" role="img">
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+        <svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>
+      </div>
+      <p class="testimonial-quote">J'ai fait appel à NR PROCLEAN pour un nettoyage après décès, dans une situation particulièrement délicate. J'ai découvert une équipe très professionnelle et efficace. Rien à redire — une intervention rapide et impeccable.</p>
+      <div class="testimonial-footer">
+        <div class="testimonial-attribution">Propriétaire bailleur<span>Liège</span></div>
+        <div class="google-badge"><svg viewbox="0 0 24 24"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.9-6.2 3.9 1.6-7-5.4-4.7 7.1-.6z"></path></svg>Google</div>
+      </div>
+    </div>
+  </div>
+  <div class="reassurance-row" data-reveal="" style="transition-delay:0.5s">
+    <div class="reassurance-item">
+      <svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Réponse garantie sous 24 à 48h ouvrables
+    </div>
+    <div class="reassurance-item">
+      <svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Intervention dans toute la Belgique
+    </div>
+    <div class="reassurance-item">
+      <svg viewbox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Équipes certifiées ISO 14001 &amp; VCA
     </div>
   </div>
 </section>
@@ -1038,28 +1138,32 @@ function gtag_report_conversion(url) {
   </div>
   <div data-reveal="right" style="background:var(--card);border:1px solid var(--border);border-radius:18px;padding:38px 34px;">
     <div data-i18n="index.misc.div_décrivez_votre_besoin" style="font-size:17px;font-weight:700;color:#fff;margin-bottom:26px;">Décrivez votre besoin</div>
-    <div id="contact-form">
+    <form id="contact-form" onsubmit="return submitContactForm(event);">
+      <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+        <label for="cf-hp">Ne pas remplir ce champ</label>
+        <input id="cf-hp" name="_gotcha" tabindex="-1" autocomplete="off" type="text"/>
+      </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <label data-i18n="index.misc.label_prénom_nom" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Prénom &amp; Nom</label>
-          <input id="cf-name" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="Jean Dupont" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="text"/>
+          <label for="cf-name" data-i18n="index.misc.label_prénom_nom" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Prénom &amp; Nom</label>
+          <input id="cf-name" name="name" required="" autocomplete="name" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="Jean Dupont" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="text"/>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
-          <label data-i18n="index.misc.label_société" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Société</label>
-          <input id="cf-company" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="Entreprise SA" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="text"/>
+          <label for="cf-company" data-i18n="index.misc.label_société" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Société</label>
+          <input id="cf-company" name="company" autocomplete="organization" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="Entreprise SA" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="text"/>
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
-        <label data-i18n="index.misc.label_email_professionnel" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Email</label>
-        <input id="cf-email" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="jean@entreprise.be" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="email"/>
+        <label for="cf-email" data-i18n="index.misc.label_email_professionnel" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Email</label>
+        <input id="cf-email" name="email" required="" autocomplete="email" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="jean@entreprise.be" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="email"/>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
-        <label style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Téléphone <span style="color:rgba(0,212,216,0.8);">*</span></label>
-        <input id="cf-phone" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="+32 484 44 24 21" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="tel"/>
+        <label for="cf-phone" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Téléphone <span style="color:rgba(0,212,216,0.8);">*</span></label>
+        <input id="cf-phone" name="phone" required="" autocomplete="tel" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="+32 484 44 24 21" style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;transition:border-color 0.18s;" type="tel"/>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
-        <label data-i18n="index.misc.label_type_de_site" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Type de site <span style="font-weight:400;opacity:0.5;">(optionnel)</span></label>
-        <select id="cf-type" style="background:#0C1525;border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:rgba(255,255,255,0.6);font-family:'Onest',sans-serif;font-size:14px;outline:none;appearance:none;cursor:pointer;">
+        <label for="cf-type" data-i18n="index.misc.label_type_de_site" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Type de site <span style="font-weight:400;opacity:0.5;">(optionnel)</span></label>
+        <select id="cf-type" name="type" style="background:#0C1525;border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:rgba(255,255,255,0.6);font-family:'Onest',sans-serif;font-size:14px;outline:none;appearance:none;cursor:pointer;">
           <option data-i18n="index.misc.option_sélectionnez" disabled="" selected="" value="">Sélectionnez...</option>
           <option style="background:#0C1525;color:#fff;">Bureaux / Open-space</option>
           <option style="background:#0C1525;color:#fff;">Nettoyage hôtelier / hébergements</option>
@@ -1074,15 +1178,15 @@ function gtag_report_conversion(url) {
         </select>
       </div>
       <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:0;">
-        <label data-i18n="index.misc.label_message" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Message</label>
-        <textarea id="cf-message" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="Décrivez votre site, la surface approximative, la fréquence souhaitée..." style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;resize:vertical;min-height:96px;transition:border-color 0.18s;"></textarea>
+        <label for="cf-message" data-i18n="index.misc.label_message" style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.6);">Message</label>
+        <textarea id="cf-message" name="message" required="" onblur="this.style.borderColor='rgba(255,255,255,0.08)'" onfocus="this.style.borderColor='rgba(0,212,216,0.5)'" placeholder="Décrivez votre site, la surface approximative, la fréquence souhaitée..." style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:#fff;font-family:'Onest',sans-serif;font-size:14px;outline:none;resize:vertical;min-height:96px;transition:border-color 0.18s;"></textarea>
       </div>
-      <button data-i18n="index.misc.button_envoyer_ma_demande" id="cf-submit" onclick="submitContactForm()" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'" onmouseover="this.style.opacity='0.87';this.style.transform='translateY(-1px)'" style="width:100%;background:var(--cyan);color:#080D1A;font-weight:700;font-size:15px;padding:14px;border-radius:8px;border:none;cursor:pointer;margin-top:20px;font-family:'Onest',sans-serif;transition:opacity 0.18s,transform 0.15s;">
+      <button data-i18n="index.misc.button_envoyer_ma_demande" id="cf-submit" type="submit" onmouseout="this.style.opacity='1';this.style.transform='translateY(0)'" onmouseover="this.style.opacity='0.87';this.style.transform='translateY(-1px)'" style="width:100%;background:var(--cyan);color:#080D1A;font-weight:700;font-size:15px;padding:14px;border-radius:8px;border:none;cursor:pointer;margin-top:20px;font-family:'Onest',sans-serif;transition:opacity 0.18s,transform 0.15s;">
         Envoyer ma demande
       </button>
-      <div id="cf-error" style="display:none;margin-top:12px;padding:12px 14px;background:rgba(220,60,60,0.12);border:1px solid rgba(220,60,60,0.25);border-radius:8px;font-size:13px;color:#ff7070;text-align:center;"></div>
+      <div id="cf-error" role="alert" aria-live="polite" style="display:none;margin-top:12px;padding:12px 14px;background:rgba(220,60,60,0.12);border:1px solid rgba(220,60,60,0.25);border-radius:8px;font-size:13px;color:#ff7070;text-align:center;"></div>
       <p data-i18n="index.misc.p_réponse_garantie_sous_24_" style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px;">Réponse garantie sous 24 à 48h ouvrables</p>
-    </div>
+    </form>
     <div id="contact-success" style="display:none;text-align:center;padding:32px 0;">
       <div style="width:52px;height:52px;border-radius:50%;background:rgba(0,212,216,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
         <svg fill="none" height="24" stroke="#00D4D8" stroke-width="2.5" viewbox="0 0 24 24" width="24"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -1121,7 +1225,7 @@ function gtag_report_conversion(url) {
       <ul>
         <li><a href="#contact">Demander un devis</a></li>
         <li><a href="mailto:contact@nrproclean.be">contact@nrproclean.be</a></li>
-        <li><a href="tel:+3248444242">+32 (0) 484 44 24 21</a></li>
+        <li><a href="tel:+32484442421">+32 (0) 484 44 24 21</a></li>
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -1138,11 +1242,21 @@ function gtag_report_conversion(url) {
   <div class="footer-bottom">
     <span>© 2026 NR PROCLEAN. Tous droits réservés.</span>
     <span>Belgique — TVA: BE10 22 740 185</span>
+    <span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="#" data-cookie-manage="">Cookies</a></span>
   </div>
 </footer>
 
 <script>
-async function submitContactForm() {
+var __nrFormLoadedAt = Date.now();
+
+async function submitContactForm(evt) {
+  if (evt) evt.preventDefault();
+
+  var honeypot = document.getElementById('cf-hp').value;
+  if (honeypot) return false; // bot detected: silently ignore
+
+  if (Date.now() - __nrFormLoadedAt < 2000) return false; // soumission trop rapide: probable bot
+
   var name    = document.getElementById('cf-name').value.trim();
   var company = document.getElementById('cf-company').value.trim();
   var email   = document.getElementById('cf-email').value.trim();
@@ -1157,7 +1271,7 @@ async function submitContactForm() {
   if (!name || !email || !phone || !message) {
     errorEl.textContent = 'Veuillez remplir votre nom, email, téléphone et message.';
     errorEl.style.display = 'block';
-    return;
+    return false;
   }
 
   btn.disabled = true;
@@ -1173,6 +1287,7 @@ async function submitContactForm() {
 
     if (response.ok) {
       gtag_report_conversion();
+      document.dispatchEvent(new CustomEvent('nr-form-submitted'));
       emailjs.send('service_jqp0zv8', 'template_5labfae', { name, email })
         .then(() => console.log('EmailJS: confirmation envoyée à', email))
         .catch(err => console.error('EmailJS erreur:', JSON.stringify(err)));

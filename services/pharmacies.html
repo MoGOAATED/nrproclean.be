@@ -2,15 +2,7 @@
 
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18156226667"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18156226667');
-  gtag('config', 'G-M0GP40T5SG');
-</script>
+<script src="../cookie-consent.js"></script>
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Nettoyage de pharmacies à Liège | NR PROCLEAN</title>
 <meta content="Désinfection de pharmacies à Liège : protocoles sanitaires stricts, produits homologués, intervention hors heures d'ouverture. Devis gratuit." name="description"/>
@@ -21,7 +13,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <style>
-    :root{--bg:#080D1A;--cyan:#00D4D8;--cyan2:#00B8BC;--muted:rgba(255,255,255,0.55);--border:rgba(255,255,255,0.08);--light:#F7F9FC;--text:#1A1F2E;--text2:#4A5568}
+    :root{--bg:#080D1A;--cyan:#00D4D8;--cyan2:#00B8BC;--cyan-dark:#006A6C;--muted:rgba(255,255,255,0.55);--border:rgba(255,255,255,0.08);--light:#F7F9FC;--text:#1A1F2E;--text2:#4A5568}
     *,::before,::after{box-sizing:border-box;margin:0;padding:0}html{font-family:'Onest',sans-serif;scroll-behavior:smooth}body{background:var(--bg);color:#fff;font-size:16px;line-height:1.6;overflow-x:hidden}
     nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(8,13,26,0.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px}
     .nav-logo img{height:38px}.nav-links{display:flex;align-items:center;gap:8px;list-style:none}.nav-links>li{position:relative}
@@ -51,7 +43,7 @@
     .hero-badge-num{font-size:28px;font-weight:900;color:var(--cyan);line-height:1}.hero-badge-text{font-size:12px;color:rgba(255,255,255,0.65)}.hero-badge-text strong{color:#fff;font-size:13px;display:block}
     .section-light{background:#fff;padding:96px 80px}.section-gray{background:var(--light);padding:96px 80px}
     .container{max-width:1200px;margin:0 auto}
-    .section-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;display:block}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan-dark);margin-bottom:16px;display:block}
     h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1}.h2-dark{color:var(--text)}
     .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
     .pain-card{background:#fff;border:1px solid #E8EDF5;border-radius:18px;padding:36px 32px;box-shadow:0 4px 24px rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden}
@@ -103,7 +95,8 @@
     .footer-col h5{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.9);margin-bottom:20px}
     .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}.footer-col a{font-size:14px;color:var(--muted);text-decoration:none;transition:color 0.18s}.footer-col a:hover{color:var(--cyan)}
     .footer-social{display:flex;gap:10px;margin-top:24px}.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-size:12px;font-weight:800;transition:background 0.18s,border-color 0.18s,color 0.18s}.social-btn:hover{background:var(--cyan);border-color:var(--cyan);color:#080D1A}
-    .footer-bottom{border-top:1px solid var(--border);padding-top:28px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted)}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted)}
+    .footer-bottom a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}.footer-bottom a:hover,.footer-bottom a:focus-visible{color:var(--cyan)}
     [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1)}[data-reveal].revealed{opacity:1;transform:translate(0,0)}
     @media(max-width:1100px){nav{padding:0 32px}.footer-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}.stat-item:nth-child(odd){border-right:1px solid rgba(255,255,255,0.07)}.surfaces-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:900px){nav{padding:0 24px}.hero{grid-template-columns:1fr;min-height:auto}.hero-content{padding:100px 24px 48px}.hero-visual{height:360px}.section-light,.section-gray,.stats-band,.process-section{padding:72px 24px}.mid-cta{padding:48px 24px;flex-direction:column;align-items:flex-start}.final-cta{padding:80px 24px}.split-grid{grid-template-columns:1fr;gap:40px}.split-img{height:300px}.pain-grid{grid-template-columns:1fr}.surfaces-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr;gap:24px}.process-grid::before{display:none}footer{padding:48px 24px 28px}.footer-grid{grid-template-columns:1fr;gap:36px}}
@@ -145,6 +138,9 @@
 <span class="trust-item" data-i18n="pharmacies.herotrust.span_traçabilité_garantie"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Traçabilité garantie</span>
 <span class="trust-item" data-i18n="pharmacies.herotrust.span_avant_louverture"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Avant l'ouverture</span>
 </div>
+</div>
+<div class="hero-visual">
+<img alt="Pharmacie et réserve de médicaments entretenues par NR PROCLEAN" src="../Brand_assets/stock/pharmacies-hero.webp" fetchpriority="high"/>
 </div>
 </section>
 <!-- Pain Section -->
@@ -343,15 +339,16 @@
 <h5>Contact</h5>
 <ul>
 <li><a href="tel:+32484442421">0484 44 24 21</a></li>
-<li><a href="mailto:info@nrproclean.be">info@nrproclean.be</a></li>
+<li><a href="mailto:contact@nrproclean.be">contact@nrproclean.be</a></li>
 <li><a href="../index.html#contact">Devis gratuit</a></li>
 <li><a href="../pourquoi.html">Pourquoi nous</a></li>
 </ul>
 </div>
 </div>
 <div class="footer-bottom">
-<span>© 2025 NR PROCLEAN · Rue Belvaux 163, 4030 Grivegnée</span>
-<span>TVA BE 1008.611.330</span>
+<span>© 2026 NR PROCLEAN. Tous droits réservés.</span>
+<span>Belgique — TVA: BE10 22 740 185</span>
+<span><a href="../mentions-legales.html">Mentions légales</a> · <a href="../politique-confidentialite.html">Confidentialité</a> · <a href="#" data-cookie-manage="">Cookies</a></span>
 </div>
 </div>
 </footer>

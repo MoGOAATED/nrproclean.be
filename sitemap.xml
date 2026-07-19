@@ -106,4 +106,18 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://www.nrproclean.be/mentions-legales.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nrproclean.be/politique-confidentialite.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
 </urlset>

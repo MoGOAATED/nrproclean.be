@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<script src="cookie-consent.js"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Politique de confidentialité | NR PROCLEAN</title>
+<meta content="Politique de confidentialité et gestion des cookies de NR PROCLEAN SERVICES SRL, société de nettoyage professionnel à Liège, Belgique." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="/favicon-nr.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon-nr.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon-nr.png" rel="apple-touch-icon"/>
+<link href="https://www.nrproclean.be/politique-confidentialite.html" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="NR PROCLEAN" property="og:site_name"/>
+<meta content="Politique de confidentialité | NR PROCLEAN" property="og:title"/>
+<meta content="https://www.nrproclean.be/politique-confidentialite.html" property="og:url"/>
+<meta content="fr_BE" property="og:locale"/>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --bg:     #080D1A;
+      --bg2:    #0C1220;
+      --card:   #0F1628;
+      --cyan:   #00D4D8;
+      --cyan2:  #00B8BC;
+      --cyan-dark: #006A6C;
+      --cdim:   rgba(0,212,216,0.12);
+      --muted:  rgba(255,255,255,0.55);
+      --border: rgba(255,255,255,0.08);
+      --light:  #f5f6f8;
+    }
+    *, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-family: 'Onest', sans-serif; scroll-behavior: smooth; }
+    body { background: var(--bg); color: #fff; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      background: rgba(8,13,26,0.96); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 52px; height: 66px;
+    }
+    .nav-logo img { height: 38px; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .nav-links a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 500; padding: 9px 16px; border-radius: 8px; transition: color 0.18s, background 0.18s; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #fff; background: rgba(255,255,255,0.06); }
+    .nav-cta { background: var(--cyan); color: #080D1A; font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 7px; text-decoration: none; transition: opacity 0.18s, transform 0.15s; }
+    .nav-cta:hover { opacity: 0.87; transform: translateY(-1px); }
+    .nav-cta:focus-visible, .nav-links a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    main { max-width: 760px; margin: 0 auto; padding: 150px 24px 100px; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 18px; }
+    h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 12px; }
+    .updated { color: var(--muted); font-size: 14px; margin-bottom: 56px; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 14px; color: #fff; }
+    p { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.8; margin-bottom: 12px; }
+    ul { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.8; padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 4px; }
+    a.inline { color: var(--cyan-dark); background: rgba(0,212,216,0.12); text-decoration: underline; }
+    strong { color: #fff; font-weight: 600; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+    .card p { margin-bottom: 6px; }
+    .card p:last-child { margin-bottom: 0; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); color: rgba(255,255,255,0.75); vertical-align: top; }
+    th { color: #fff; font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .table-wrap { overflow-x: auto; margin-bottom: 12px; }
+
+    button.manage-cookies-btn { font-family: inherit; font-size: 14px; font-weight: 700; color: #080D1A; background: var(--cyan); border: none; border-radius: 8px; padding: 12px 22px; cursor: pointer; transition: opacity 0.18s, transform 0.15s; }
+    button.manage-cookies-btn:hover { opacity: 0.87; transform: translateY(-1px); }
+    button.manage-cookies-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+    footer { background: #060A14; border-top: 1px solid var(--border); padding: 56px 80px 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+    .footer-brand img { height: 32px; margin-bottom: 16px; display: block; }
+    .footer-brand p { font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 300px; }
+    .footer-col h5 { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding: 0; }
+    .footer-col a { font-size: 14px; color: var(--muted); text-decoration: none; }
+    .footer-col a:hover, .footer-col a:focus-visible { color: var(--cyan); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .footer-bottom a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+    .footer-bottom a:hover, .footer-bottom a:focus-visible { color: var(--cyan); }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      main { padding: 130px 20px 72px; }
+      footer { padding: 48px 24px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+<a class="nav-logo" href="index.html"><img alt="NR PROCLEAN" src="Brand_assets/version-bleu.webp"/></a>
+<ul class="nav-links">
+<li><a href="index.html">Accueil</a></li>
+<li><a href="pourquoi.html">Pourquoi nous ?</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<a class="nav-cta" href="index.html#contact">Demander un devis</a>
+</nav>
+
+<main>
+<div class="eyebrow">RGPD</div>
+<h1>Politique de confidentialité</h1>
+<p class="updated">Dernière mise à jour : 19 juillet 2026</p>
+
+<section>
+<h2>Responsable du traitement</h2>
+<div class="card">
+<p><strong>NR PROCLEAN SERVICES SRL</strong></p>
+<p>Rue Belvaux 163, 4030 Grivegnée (Liège), Belgique</p>
+<p>TVA : BE10 22 740 185</p>
+<p>Contact RGPD : <a class="inline" href="mailto:contact@nrproclean.be">contact@nrproclean.be</a></p>
+</div>
+<p>NR PROCLEAN SERVICES SRL traite vos données personnelles dans le respect du Règlement Général sur la Protection des Données (RGPD) et de la loi belge du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données à caractère personnel.</p>
+</section>
+
+<section>
+<h2>Données collectées</h2>
+<p>Nous collectons des données personnelles uniquement lorsque vous les communiquez volontairement, notamment via le formulaire de contact/devis de ce site :</p>
+<ul>
+<li>Nom et prénom</li>
+<li>Nom de la société (facultatif)</li>
+<li>Adresse email</li>
+<li>Numéro de téléphone</li>
+<li>Contenu de votre message et, le cas échéant, type de site concerné</li>
+</ul>
+<p>Aucune donnée sensible (santé, opinions, données biométriques…) n'est demandée ni collectée via ce formulaire.</p>
+</section>
+
+<section>
+<h2>Finalités du traitement</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Finalité</th><th>Base légale</th><th>Durée de conservation</th></tr></thead>
+<tbody>
+<tr><td>Répondre à votre demande de devis ou d'information</td><td>Intérêt légitime précontractuel</td><td>24 mois après le dernier contact</td></tr>
+<tr><td>Gestion de la relation commerciale (client existant)</td><td>Exécution du contrat</td><td>Durée de la relation contractuelle + 10 ans (obligations comptables)</td></tr>
+<tr><td>Envoi d'un email de confirmation automatique</td><td>Consentement implicite à l'envoi du formulaire</td><td>Non conservé au-delà de l'envoi</td></tr>
+<tr><td>Mesure d'audience et publicité (Google Analytics / Google Ads)</td><td>Consentement (bannière cookies)</td><td>13 mois maximum</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>Destinataires des données</h2>
+<p>Vos données sont traitées par NR PROCLEAN SERVICES SRL et par les sous-traitants techniques suivants, dans la stricte mesure nécessaire au fonctionnement du site :</p>
+<ul>
+<li><strong>Formspree</strong> — réception et transmission du formulaire de contact</li>
+<li><strong>EmailJS</strong> — envoi de l'email de confirmation automatique</li>
+<li><strong>Google (Analytics &amp; Ads)</strong> — mesure d'audience et suivi de conversion publicitaire, uniquement si vous avez donné votre consentement via la bannière cookies</li>
+</ul>
+<p>Aucune donnée n'est vendue à des tiers.</p>
+</section>
+
+<section>
+<h2>Vos droits</h2>
+<p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+<ul>
+<li>Droit d'accès et de rectification</li>
+<li>Droit à l'effacement (« droit à l'oubli »)</li>
+<li>Droit à la limitation du traitement</li>
+<li>Droit d'opposition</li>
+<li>Droit à la portabilité de vos données</li>
+</ul>
+<p>Pour exercer l'un de ces droits, contactez-nous à <a class="inline" href="mailto:contact@nrproclean.be">contact@nrproclean.be</a>. Vous disposez également du droit d'introduire une réclamation auprès de l'Autorité de protection des données belge (APD) — <a class="inline" href="https://www.autoriteprotectiondonnees.be" rel="noopener" target="_blank">autoriteprotectiondonnees.be</a>.</p>
+</section>
+
+<section>
+<h2>Cookies</h2>
+<p>Ce site utilise deux catégories de cookies :</p>
+<ul>
+<li><strong>Cookies nécessaires</strong> — indispensables au fonctionnement du site (ex. mémorisation de votre choix de langue ou de votre consentement aux cookies). Ils ne peuvent pas être désactivés.</li>
+<li><strong>Cookies de mesure d'audience &amp; publicité</strong> — Google Analytics et Google Ads, activés uniquement si vous cliquez sur « Accepter tout » dans la bannière cookies. Ils nous permettent de mesurer la fréquentation du site et l'efficacité de nos campagnes publicitaires.</li>
+</ul>
+<p>Vous pouvez modifier votre choix à tout moment :</p>
+<button class="manage-cookies-btn" data-cookie-manage="" type="button">Gérer mes préférences cookies</button>
+</section>
+
+<section>
+<h2>Sécurité</h2>
+<p>Ce site est servi en HTTPS et les échanges de données via le formulaire de contact sont chiffrés en transit. Nous mettons en œuvre les mesures raisonnables pour protéger vos données contre tout accès, modification ou divulgation non autorisés.</p>
+</section>
+
+<section>
+<h2>Contact RGPD</h2>
+<p>Pour toute question relative à cette politique de confidentialité ou au traitement de vos données, contactez-nous à <a class="inline" href="mailto:contact@nrproclean.be">contact@nrproclean.be</a> ou au <a class="inline" href="tel:+32484442421">+32 (0) 484 44 24 21</a>.</p>
+</section>
+</main>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-brand">
+<img alt="NR PROCLEAN" src="Brand_assets/version-bleu.webp"/>
+<p>Service de nettoyage professionnel sur mesure pour entreprises, commerces, hôtels et sites industriels en Belgique.</p>
+</div>
+<div class="footer-col">
+<h5>Services</h5>
+<ul>
+<li><a href="services/bureaux.html">Nettoyage de bureaux</a></li>
+<li><a href="services/vitres.html">Nettoyage de vitres</a></li>
+<li><a href="services/hotelier.html">Nettoyage hôtelier</a></li>
+<li><a href="services/industriel.html">Nettoyage industriel</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h5>Contact</h5>
+<ul>
+<li><a href="index.html#contact">Demander un devis</a></li>
+<li><a href="mailto:contact@nrproclean.be">contact@nrproclean.be</a></li>
+<li><a href="tel:+32484442421">+32 (0) 484 44 24 21</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 NR PROCLEAN. Tous droits réservés.</span>
+<span>Belgique — TVA: BE10 22 740 185</span>
+<span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="#" data-cookie-manage="">Cookies</a></span>
+</div>
+</footer>
+<script src="lang.js"></script>
+</body>
+</html>

@@ -2,15 +2,7 @@
 
 <html lang="fr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18156226667"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18156226667');
-  gtag('config', 'G-M0GP40T5SG');
-</script>
+<script src="cookie-consent.js"></script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Pourquoi NR PROCLEAN ? | Nettoyage Liège</title>
@@ -42,6 +34,7 @@
       --card:   #0F1628;
       --cyan:   #00D4D8;
       --cyan2:  #00B8BC;
+      --cyan-dark: #006A6C;
       --cdim:   rgba(0,212,216,0.12);
       --muted:  rgba(255,255,255,0.55);
       --border: rgba(255,255,255,0.08);
@@ -104,7 +97,7 @@
 
     /* VALEURS */
     .valeurs { background: var(--light); padding: 96px 80px; }
-    .valeurs .eyebrow { color: var(--cyan2); }
+    .valeurs .eyebrow { color: var(--cyan-dark); }
     .valeurs h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; color: #0a0f1a; margin-bottom: 16px; }
     .valeurs-intro { color: #555; font-size: 16px; line-height: 1.8; max-width: 560px; margin-bottom: 56px; }
     .valeurs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -153,7 +146,7 @@
     .chiffres { background: var(--light); padding: 80px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .stat-card { background: #fff; border-radius: 18px; padding: 44px 36px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); transition: transform 0.2s; }
     .stat-card:hover { transform: translateY(-4px); }
-    .stat-num { font-size: clamp(2.8rem, 4vw, 3.8rem); font-weight: 900; color: var(--cyan); letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
+    .stat-num { font-size: clamp(2.8rem, 4vw, 3.8rem); font-weight: 900; color: var(--cyan-dark); letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
     .stat-label { font-size: 17px; font-weight: 600; color: #1a1a1a; line-height: 1.4; }
 
     /* SERVICES GRID */
@@ -186,7 +179,9 @@
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-col a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.18s; }
     .footer-col a:hover { color: var(--cyan); }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: space-between; font-size: 13px; color: var(--muted); }
+    .footer-bottom a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+    .footer-bottom a:hover, .footer-bottom a:focus-visible { color: var(--cyan); }
 
     @media (max-width: 1100px) {
       nav { padding: 0 32px; }
@@ -245,7 +240,7 @@
 </div>
 <div class="hero-right">
 <div class="hero-right-overlay"></div>
-<img alt="Équipe NR PROCLEAN en intervention" src="Brand_assets/ultra_realistic_professional_c_Nano_Banana_2_81813.webp"/>
+<img alt="Espace de bureaux professionnel entretenu par NR PROCLEAN" src="Brand_assets/stock/hero-office.webp"/>
 </div>
 </section>
 <!-- ── NOS VALEURS ── -->
@@ -415,6 +410,7 @@
 <div class="footer-bottom">
 <span>© 2026 NR PROCLEAN. Tous droits réservés.</span>
 <span>TVA: BE10 22 740 185</span>
+<span><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="#" data-cookie-manage="">Cookies</a></span>
 </div>
 </footer>
 <script src="lang.js"></script>
