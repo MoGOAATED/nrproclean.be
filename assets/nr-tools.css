@@ -1,0 +1,272 @@
+/* NR PROCLEAN — Styles partagés pour tous les outils interactifs (Web Components).
+   Rendu en light DOM : réutilise les tokens CSS déjà définis par chaque page
+   (--cyan, --cyan-dark, --card, --border) plutôt que de les dupliquer dans un
+   Shadow DOM. Valeurs de repli fournies au cas où une page ne les définirait pas. */
+
+nr-price-calculator,
+nr-quote-configurator,
+nr-spec-generator {
+  display: block;
+}
+
+.tool-card {
+  background: var(--card, #0F1628);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 640px;
+  min-height: 280px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-title {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.tool-step { margin-bottom: 14px; }
+
+.tool-step-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan, #00D4D8);
+  margin-bottom: 10px;
+}
+
+.tool-btn-group { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tool-btn-select {
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 10px;
+  padding: 9px 14px;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: border-color 0.18s, background 0.18s, color 0.18s, transform 0.16s ease, box-shadow 0.16s ease;
+  min-height: 42px;
+}
+.tool-btn-select:hover {
+  border-color: rgba(0,212,216,0.35);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.16);
+}
+.tool-btn-select:focus-visible {
+  outline: 2px solid var(--cyan, #00D4D8);
+  outline-offset: 2px;
+}
+.tool-btn-select.is-active {
+  background: linear-gradient(135deg, rgba(0,212,216,0.95), rgba(0,212,216,0.82));
+  color: #080D1A;
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(0,212,216,0.18);
+}
+.tool-btn-select:disabled {
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tool-result { margin-top: 18px; }
+
+.tool-result-price {
+  font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+  font-weight: 800;
+  color: var(--cyan, #00D4D8);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.tool-result-text { font-size: 14.5px; color: rgba(255,255,255,0.75); line-height: 1.65; margin-bottom: 14px; }
+.tool-result-note { font-size: 12.5px; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
+
+.tool-cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+
+.tool-cta-primary {
+  font-family: inherit;
+  background: var(--cyan, #00D4D8);
+  color: #080D1A;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.18s, transform 0.15s, box-shadow 0.18s;
+  min-height: 42px;
+  box-shadow: 0 8px 16px rgba(0,212,216,0.14);
+}
+.tool-cta-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 10px 20px rgba(0,212,216,0.2); }
+.tool-cta-primary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.tool-cta-primary:disabled { opacity: 0.6; cursor: default; transform: none; }
+
+.tool-cta-secondary {
+  display: inline-block;
+  color: var(--cyan, #00D4D8);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.18s ease, color 0.18s ease;
+}
+.tool-cta-secondary:hover, .tool-cta-secondary:focus-visible { opacity: 0.9; }
+
+.tool-lead-form { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; max-width: 380px; }
+
+.tool-input {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  min-height: 44px;
+}
+.tool-input::placeholder { color: rgba(255,255,255,0.4); }
+.tool-input:focus-visible { outline: 2px solid var(--cyan, #00D4D8); outline-offset: 1px; }
+
+.tool-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.tool-error { color: #FF6B6B; font-size: 13px; margin-top: 4px; }
+.tool-success { color: var(--cyan, #00D4D8); font-weight: 600; font-size: 15px; }
+.tool-loading, .tool-fallback-text, .tool-locked-secteur { color: rgba(255,255,255,0.6); font-size: 14px; }
+
+/* ── Composants ajoutés au Sprint 2 : réutilisables par tout futur outil
+   multi-étapes (générateur de planning, de protocole...) ── */
+
+.tool-progress {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+.tool-progress-dot {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.1);
+  transition: background 0.25s;
+}
+.tool-progress-dot.is-done,
+.tool-progress-dot.is-current { background: var(--cyan, #00D4D8); }
+
+.tool-step-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 6px;
+}
+
+.tool-checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+.tool-checkbox-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s, transform 0.16s ease;
+}
+.tool-checkbox-item:hover {
+  border-color: rgba(0,212,216,0.3);
+  background: rgba(255,255,255,0.02);
+  transform: translateY(-1px);
+}
+.tool-checkbox-item input[type="checkbox"] {
+  width: 18px; height: 18px; margin-top: 1px; flex-shrink: 0; accent-color: var(--cyan, #00D4D8); cursor: pointer;
+}
+.tool-checkbox-item input[type="checkbox"]:focus-visible { outline: 2px solid var(--cyan, #00D4D8); outline-offset: 2px; }
+.tool-checkbox-item span { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+.tool-textarea {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+}
+.tool-textarea::placeholder { color: rgba(255,255,255,0.4); }
+.tool-textarea:focus-visible { outline: 2px solid var(--cyan, #00D4D8); outline-offset: 1px; }
+
+.tool-step-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; gap: 12px; }
+.tool-btn-outline {
+  font-family: inherit;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 20px;
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: border-color 0.18s, color 0.18s;
+}
+.tool-btn-outline:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
+.tool-btn-outline:focus-visible { outline: 2px solid var(--cyan, #00D4D8); outline-offset: 2px; }
+.tool-btn-outline:disabled { opacity: 0.35; cursor: default; pointer-events: none; }
+
+.tool-step-counter { font-size: 13px; color: rgba(255,255,255,0.45); }
+
+/* Document généré : typographie dédiée, lisible à l'écran comme à l'impression */
+.tool-document { color: #fff; }
+.tool-document h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 4px; }
+.tool-document .tool-document-subtitle { color: rgba(255,255,255,0.5); font-size: 13px; margin-bottom: 28px; }
+.tool-document h3 {
+  font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--cyan, #00D4D8); margin: 26px 0 10px; padding-top: 18px; border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+}
+.tool-document h3:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.tool-document dl { display: grid; grid-template-columns: 200px 1fr; gap: 8px 16px; margin-bottom: 4px; }
+.tool-document dt { color: rgba(255,255,255,0.5); font-size: 13.5px; }
+.tool-document dd { color: #fff; font-size: 13.5px; font-weight: 600; }
+.tool-document ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.tool-document ul li { font-size: 13.5px; color: rgba(255,255,255,0.85); padding-left: 18px; position: relative; }
+.tool-document ul li::before { content: '—'; position: absolute; left: 0; color: var(--cyan, #00D4D8); }
+.tool-document .tool-document-empty { color: rgba(255,255,255,0.35); font-style: italic; }
+
+.tool-actions-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border, rgba(255,255,255,0.08)); }
+
+@media (max-width: 480px) {
+  .tool-card { padding: 20px; min-height: auto; }
+  .tool-btn-group { display: grid; grid-template-columns: 1fr 1fr; }
+  .tool-document dl { grid-template-columns: 1fr; gap: 0 0; }
+  .tool-document dt { margin-top: 10px; }
+}
+
+/* Impression : le document doit rester lisible et économe en encre sur papier,
+   quelle que soit la page qui l'affiche. Masque systématiquement le chrome du
+   site et de l'outil, quel que soit l'outil concerné. */
+@media print {
+  nav, footer, .tool-progress, .tool-step-nav, .tool-actions-row,
+  .page-hero, .content > h2, .content > p.body-text, .content > .indicative-box,
+  .faq-list, .content > .faq-list, details.faq-item { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .tool-document { color: #000 !important; }
+  .tool-document h3 { color: #000 !important; border-top-color: #ccc !important; }
+  .tool-document dt { color: #444 !important; }
+  .tool-document dd, .tool-document ul li { color: #000 !important; }
+  .tool-document ul li::before { color: #000 !important; }
+  .tool-card { background: #fff !important; border: none !important; box-shadow: none !important; }
+  .tool-document h3 { page-break-after: avoid; }
+  .tool-document > div { page-break-inside: avoid; }
+}

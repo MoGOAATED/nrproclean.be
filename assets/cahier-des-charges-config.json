@@ -1,0 +1,74 @@
+{
+  "version": "2026-07-20",
+  "secteurs": {
+    "bureaux": { "label": "Nettoyage de bureaux" },
+    "magasins": { "label": "Magasins & commerces" },
+    "coworking": { "label": "Espaces de coworking" },
+    "cabinet-medical": { "label": "Cabinet médical" },
+    "pharmacies": { "label": "Pharmacies" },
+    "hotelier": { "label": "Hôtellerie & hébergement" },
+    "industriel": { "label": "Site industriel" },
+    "autres": { "label": "Autre secteur" }
+  },
+  "types_batiment": {
+    "openspace": { "label": "Open-space / plateau ouvert" },
+    "cellulaire": { "label": "Bureaux cellulaires / cloisonnés" },
+    "commerce": { "label": "Commerce / point de vente" },
+    "cabinet": { "label": "Cabinet professionnel" },
+    "entrepot": { "label": "Entrepôt / atelier" },
+    "hebergement": { "label": "Hôtel / hébergement" },
+    "autre": { "label": "Autre configuration" }
+  },
+  "frequences": {
+    "quotidien_5_7": { "label": "Quotidien (5j/7)" },
+    "quotidien_7_7": { "label": "Quotidien (7j/7)" },
+    "frequence_3x_semaine": { "label": "3 fois par semaine" },
+    "frequence_2x_semaine": { "label": "2 fois par semaine" },
+    "hebdomadaire": { "label": "Hebdomadaire" },
+    "bimensuel": { "label": "Bi-mensuel" },
+    "mensuel": { "label": "Mensuel" },
+    "ponctuel": { "label": "Ponctuel / sur demande" }
+  },
+  "horaires": {
+    "avant_ouverture": { "label": "Avant l'ouverture" },
+    "apres_fermeture": { "label": "Après la fermeture" },
+    "heures_ouverture": { "label": "Pendant les heures d'ouverture" },
+    "horaires_decales_nuit": { "label": "Horaires décalés / nuit" },
+    "weekend": { "label": "Week-end" }
+  },
+  "contraintes": {
+    "acces_securise": { "label": "Accès sécurisé (badge, code, clé remise)" },
+    "presence_animaux": { "label": "Présence d'animaux sur site" },
+    "produits_specifiques": { "label": "Produits ou protocoles spécifiques imposés" },
+    "zones_confidentielles": { "label": "Zones confidentielles / accès restreint" },
+    "absence_personnel": { "label": "Aucun personnel présent pendant l'intervention" }
+  },
+  "prestations": {
+    "depoussierage": { "label": "Dépoussiérage des surfaces et mobilier" },
+    "sols": { "label": "Entretien des sols" },
+    "sanitaires": { "label": "Nettoyage et désinfection des sanitaires" },
+    "vitres_interieures": { "label": "Nettoyage des vitres intérieures" },
+    "vitres_exterieures": { "label": "Nettoyage des vitres extérieures" },
+    "dechets": { "label": "Gestion des poubelles et déchets" },
+    "desinfection_renforcee": { "label": "Désinfection renforcée des points de contact" },
+    "cuisine_refectoire": { "label": "Entretien cuisine / réfectoire" },
+    "reapprovisionnement": { "label": "Réapprovisionnement des consommables sanitaires" }
+  },
+  "zones": {
+    "bureaux_openspace": { "label": "Bureaux / open-space" },
+    "salles_reunion": { "label": "Salles de réunion" },
+    "accueil_hall": { "label": "Accueil / hall d'entrée" },
+    "sanitaires": { "label": "Sanitaires" },
+    "cuisine_refectoire": { "label": "Cuisine / réfectoire" },
+    "couloirs": { "label": "Couloirs et circulations" },
+    "escaliers": { "label": "Escaliers" },
+    "parkings_exterieurs": { "label": "Parkings / abords extérieurs" },
+    "entrepot_stockage": { "label": "Entrepôt / zone de stockage" }
+  },
+  "options": {
+    "vitres_hauteur": { "label": "Nettoyage de vitres en hauteur (nacelle/cordiste)" },
+    "tri_selectif_renforce": { "label": "Tri sélectif renforcé" },
+    "fourniture_consommables": { "label": "Fourniture des consommables sanitaires" },
+    "prestations_saisonnieres": { "label": "Prestations saisonnières (grand nettoyage, vitres extérieures ponctuelles)" }
+  }
+}

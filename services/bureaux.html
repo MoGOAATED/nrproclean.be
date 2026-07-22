@@ -23,8 +23,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://www.nrproclean.be/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.nrproclean.be/#services"},{"@type":"ListItem","position":3,"name":"Nettoyage de bureaux","item":"https://www.nrproclean.be/services/bureaux.html"}]}</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/nr-tools.css"/>
 <style>
-    :root{--bg:#080D1A;--bg2:#0C1220;--card:#0F1628;--cyan:#00D4D8;--cyan2:#00B8BC;--cyan-dark:#006A6C;--cdim:rgba(0,212,216,0.12);--muted:rgba(255,255,255,0.55);--border:rgba(255,255,255,0.08);--light:#F7F9FC;--text:#1A1F2E;--text2:#4A5568}
+    :root{--bg:#080D1A;--bg2:#0C1220;--card:#0F1628;--cyan:#00D4D8;--cyan2:#00B8BC;--cyan-dark:#006A6C;--cdim:rgba(0,212,216,0.12);--muted:rgba(255,255,255,0.55);--border:rgba(255,255,255,0.08);--light:#F7F9FC;--text:#1A1F2E;--text2:#4A5568;--amber:#C8862B;--amber-dark:#8C5A17}
     *,::before,::after{box-sizing:border-box;margin:0;padding:0}
     html{font-family:'Onest',sans-serif;scroll-behavior:smooth}
     body{background:var(--bg);color:#fff;font-size:16px;line-height:1.6;overflow-x:hidden}
@@ -74,6 +75,12 @@
     .section-gray{background:var(--light);padding:96px 80px}
     .container{max-width:1200px;margin:0 auto}
     .section-label{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan-dark);margin-bottom:16px;display:block}
+    .tool-section{background:var(--bg);padding:96px 80px;text-align:center}
+    .tool-section .container{max-width:680px}
+    .tool-section h2{color:#fff;margin-bottom:12px}
+    .tool-section .section-body{color:var(--muted);font-size:15px;margin-bottom:36px}
+    .tool-section .tool-card{text-align:left;margin:0 auto}
+    @media(max-width:900px){.tool-section{padding:64px 24px}}
     h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;letter-spacing:-0.03em;line-height:1.1}
     .h2-dark{color:var(--text)}.h2-light{color:#fff}
     .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
@@ -147,6 +154,57 @@
     .social-btn:hover{background:var(--cyan);border-color:var(--cyan);color:#080D1A}
     .footer-bottom{border-top:1px solid var(--border);padding-top:28px;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted)}
     .footer-bottom a{color:var(--muted);text-decoration:underline;text-underline-offset:2px}.footer-bottom a:hover,.footer-bottom a:focus-visible{color:var(--cyan)}
+
+    /* Sprint 5 — Prestations, options, hors périmètre */
+    .scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+    .scope-card{background:#fff;border:1px solid #E8EDF5;border-radius:18px;padding:32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.04);display:flex;flex-direction:column}
+    .scope-badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;margin-bottom:16px;width:fit-content}
+    .scope-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+    .scope-included .scope-badge{color:var(--cyan-dark);background:rgba(0,212,216,0.12)}
+    .scope-optional .scope-badge{color:var(--amber-dark);background:rgba(200,134,43,0.12)}
+    .scope-outscope .scope-badge{color:var(--text2);background:rgba(74,85,104,0.1)}
+    .scope-card h3{font-size:18px;font-weight:800;color:var(--text);letter-spacing:-0.02em;margin-bottom:6px}
+    .scope-card>p{font-size:13.5px;color:var(--text2);line-height:1.6;margin-bottom:22px}
+    .scope-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:auto}
+    .scope-item{display:flex;align-items:flex-start;gap:11px;font-size:14.5px;color:var(--text);line-height:1.55}
+    .scope-item a{color:inherit;text-decoration:underline;text-decoration-color:rgba(0,0,0,0.2);text-underline-offset:2px}
+    .scope-item a:hover,.scope-item a:focus-visible{color:var(--cyan-dark);text-decoration-color:currentColor}
+    .scope-item svg{width:18px;height:18px;flex-shrink:0;margin-top:1px;stroke-width:2.3;fill:none}
+    .scope-included .scope-item svg{stroke:var(--cyan-dark)}
+    .scope-optional .scope-item svg{stroke:var(--amber-dark)}
+    .scope-outscope .scope-item svg{stroke:var(--text2)}
+    .scope-outscope .scope-item{color:var(--text2)}
+    .scope-note{font-size:12.5px;color:rgba(74,85,104,0.85);margin-top:20px;padding-top:16px;border-top:1px dashed #E8EDF5;line-height:1.6}
+
+    .compare-box{margin-top:56px;background:linear-gradient(135deg,rgba(0,212,216,0.06),rgba(0,212,216,0.02));border:1px solid rgba(0,212,216,0.18);border-radius:22px;padding:40px 44px}
+    .compare-box .section-label{margin-bottom:12px}
+    .compare-box h3{font-size:clamp(1.25rem,2vw,1.6rem);font-weight:800;letter-spacing:-0.02em;color:var(--text);margin-bottom:14px}
+    .compare-box>p{font-size:15px;color:var(--text2);line-height:1.75;max-width:720px;margin-bottom:28px}
+    .compare-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 32px}
+    .compare-item{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;color:var(--text);line-height:1.5}
+    .compare-item svg{width:16px;height:16px;stroke:var(--cyan-dark);stroke-width:2.3;fill:none;flex-shrink:0;margin-top:2px}
+
+    .brief-cta{margin-top:32px;background:var(--bg);border-radius:22px;padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
+    .brief-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 85% 30%,rgba(0,212,216,0.12) 0%,transparent 55%);pointer-events:none}
+    .brief-cta-text{position:relative;z-index:1;max-width:520px}
+    .brief-cta-text h3{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:8px}
+    .brief-cta-text p{font-size:14.5px;color:var(--muted);line-height:1.7}
+    .brief-cta .btn-primary{position:relative;z-index:1;flex-shrink:0}
+    @media(max-width:900px){.scope-grid{grid-template-columns:1fr}.compare-box{padding:32px 24px}.compare-list{grid-template-columns:1fr}.brief-cta{padding:32px 24px;flex-direction:column;align-items:flex-start}}
+
+    /* Sprint 6 — Pourquoi faire confiance */
+    .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+    .trust-card{background:#fff;border:1px solid #E8EDF5;border-radius:18px;padding:32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.04);display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s}
+    .trust-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1)}
+    .trust-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(0,212,216,0.12),rgba(0,212,216,0.06));display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+    .trust-icon svg{width:22px;height:22px;stroke:var(--cyan-dark);fill:none;stroke-width:1.8}
+    .trust-card h3{font-size:17px;font-weight:800;color:var(--text);margin-bottom:10px;letter-spacing:-0.02em}
+    .trust-card>p{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:18px}
+    .trust-benefit{margin-top:auto;background:rgba(0,212,216,0.05);border-left:3px solid var(--cyan);border-radius:0 10px 10px 0;padding:14px 16px}
+    .trust-benefit span{display:block;font-size:10.5px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--cyan-dark);margin-bottom:5px}
+    .trust-benefit p{font-size:13.5px;color:var(--text);font-weight:600;line-height:1.5}
+    @media(max-width:900px){.trust-grid{grid-template-columns:1fr}}
+
     [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1)}
     [data-reveal="left"]{transform:translateX(-28px)}
     [data-reveal="right"]{transform:translateX(28px)}
@@ -192,7 +250,7 @@
 <svg fill="none" height="16" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.72 10a19.79 19.79 0 01-3.07-8.67A2 2 0 012.68 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.64a16 16 0 006.29 6.29l1.01-1.01a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
         Demander un devis gratuit
       </a>
-<a class="btn-secondary" href="tel:+32484442421">0484 44 24 21</a>
+<a class="btn-secondary" href="prix-nettoyage-bureaux.html">Voir les prix</a>
 </div>
 <div class="hero-trust">
 <span class="trust-item" data-i18n="bureaux.herotrust.span_devis_sous_48h"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Devis sous 48h</span>
@@ -311,6 +369,159 @@
 </div>
 </div>
 </section>
+
+<section class="section-light">
+<div class="container">
+<div class="process-header" data-reveal="">
+<span class="section-label">Prestations &amp; périmètre</span>
+<h2 class="h2-dark">Que comprend un contrat de nettoyage de bureaux ?</h2>
+<p style="font-size:16px;color:#4A5568;line-height:1.8;margin-top:16px;max-width:680px;margin-left:auto;margin-right:auto">Un contrat de nettoyage de bureaux standard couvre un socle clair de prestations. D'autres services s'ajoutent en option selon vos locaux, et certaines interventions relèvent systématiquement d'une étude spécifique. Voici comment nous structurons chaque devis, pour que vous sachiez précisément ce que vous achetez.</p>
+</div>
+<div class="scope-grid" data-reveal="">
+<div class="scope-card scope-included">
+<span class="scope-badge">Standard</span>
+<h3>Prestations incluses</h3>
+<p>Comprises dans chaque contrat de nettoyage de bureaux, quelle que soit la fréquence.</p>
+<ul class="scope-list">
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Aspiration des sols</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Lavage des sols</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Dépoussiérage du mobilier</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Nettoyage des sanitaires</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Nettoyage des cuisines</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Vidage des corbeilles et tri</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Désinfection des points de contact</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Réapprovisionnement des consommables (si fournis par le client)</li>
+</ul>
+</div>
+<div class="scope-card scope-optional">
+<span class="scope-badge">En option</span>
+<h3>Prestations optionnelles</h3>
+<p>Ajoutées à la demande selon vos besoins — jamais incluses par défaut.</p>
+<ul class="scope-list">
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg><a href="vitres.html">Lavage de vitres</a></li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>Nettoyage des moquettes</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>Nettoyage haute pression</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg><a href="apres-travaux.html">Remise en état</a></li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg><a href="apres-travaux.html">Nettoyage après chantier</a></li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>Décapage</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>Cristallisation</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>Traitement des sols</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="8" y2="16"></line><line x1="8" x2="16" y1="12" y2="12"></line></svg>Nettoyage en hauteur</li>
+</ul>
+</div>
+<div class="scope-card scope-outscope">
+<span class="scope-badge">Étude spécifique</span>
+<h3>Hors périmètre standard</h3>
+<p>Ces situations nécessitent systématiquement un diagnostic dédié avant toute intervention.</p>
+<ul class="scope-list">
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg><a href="autres.html">Interventions d'urgence</a></li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg><a href="autres.html">Sinistres (dégâts des eaux, incendie…)</a></li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>Risques biologiques</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>Désamiantage</li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg><a href="industriel.html">Nettoyage industriel lourd</a></li>
+<li class="scope-item"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>Travaux nécessitant du matériel spécialisé</li>
+</ul>
+<p class="scope-note">Ces prestations existent chez NR PROCLEAN sous forme d'interventions dédiées, sur devis séparé — jamais intégrées à un contrat de nettoyage de bureaux standard.</p>
+</div>
+</div>
+
+<div class="compare-box" data-reveal="">
+<span class="section-label">Avant de comparer deux devis</span>
+<h3>Deux devis peuvent sembler proches, sans être comparables</h3>
+<p>Deux propositions peuvent afficher un tarif mensuel similaire tout en couvrant des prestations très différentes. Avant de trancher, voici les points à vérifier pour comparer intelligemment plusieurs devis de nettoyage de bureaux.</p>
+<ul class="compare-list">
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Fréquence réelle des passages</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Durée effective de chaque intervention</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Produits fournis ou non</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Matériel fourni ou non</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Vitres incluses ou non</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Consommables inclus ou non</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Contrôles qualité prévus</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Interlocuteur dédié ou non</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Assurances et responsabilité civile</li>
+<li class="compare-item"><svg viewbox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Flexibilité du contrat (résiliation, ajustements)</li>
+</ul>
+</div>
+
+<div class="brief-cta" data-reveal="">
+<div class="brief-cta-text">
+<h3>Besoin d'un cahier des charges précis ?</h3>
+<p>Notre générateur vous aide à définir précisément vos besoins avant de demander un devis.</p>
+</div>
+<a class="btn-primary" href="../outils/cahier-des-charges.html?secteur=bureaux">Générer mon cahier des charges →</a>
+</div>
+</div>
+</section>
+<section class="tool-section">
+<div class="container">
+<span class="section-label">Estimation gratuite</span>
+<h2>Combien coûte le nettoyage de vos bureaux ?</h2>
+<p class="section-body">Indiquez votre surface et votre fréquence souhaitée : obtenez une fourchette de prix en 30 secondes, sans engagement.</p>
+<nr-price-calculator secteur="bureaux" lock-secteur></nr-price-calculator>
+<p style="margin-top:20px;font-size:13px;"><a class="tool-cta-secondary" href="../outils/estimation-devis.html">Estimer un autre secteur d'activité →</a></p>
+<p style="margin-top:12px;font-size:13px;"><a class="tool-cta-secondary" href="../outils/cahier-des-charges.html?secteur=bureaux">Besoin de comparer plusieurs prestataires ? Générez votre cahier des charges gratuit →</a></p>
+</div>
+</section>
+
+<section class="section-light">
+<div class="container">
+<div class="process-header" data-reveal="">
+<span class="section-label">Pourquoi nous faire confiance</span>
+<h2 class="h2-dark">Des engagements concrets, pas des promesses</h2>
+<p style="font-size:16px;color:#4A5568;line-height:1.8;margin-top:16px;max-width:680px;margin-left:auto;margin-right:auto">En tant que société de nettoyage de bureaux active dans toute la Belgique, nous préférons documenter nos engagements plutôt que les résumer en superlatifs. Voici ce qui structure concrètement chaque contrat, du premier contact à la première intervention.</p>
+</div>
+<div class="trust-grid" data-reveal="">
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
+<h3>Visite gratuite avant devis</h3>
+<p>Avant tout devis, nous visitons vos locaux pour évaluer les surfaces, l'accès et vos besoins spécifiques. Cette visite est gratuite et sans engagement.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Un devis basé sur la réalité de vos locaux, pas sur une estimation à distance.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg></div>
+<h3>Devis personnalisé</h3>
+<p>Chaque proposition tient compte de votre surface, de la fréquence souhaitée, de vos horaires et de vos contraintes d'activité — jamais d'un tarif générique.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Un prix qui correspond à votre situation réelle, sans surprise à la signature.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+<h3>Contrôle qualité régulier</h3>
+<p>Une fiche d'intervention est complétée à chaque passage, ce qui permet de suivre la qualité des prestations dans le temps et d'ajuster si besoin.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Une qualité de nettoyage suivie dans le temps, pas seulement au premier passage.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
+<h3>Interlocuteur dédié</h3>
+<p>Un interlocuteur est attribué à votre contrat pour le suivi, les ajustements de planning et vos demandes ponctuelles.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Un point de contact unique, sans avoir à répéter votre contexte à chaque échange.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
+<h3>Personnel formé</h3>
+<p>Nos équipes sont formées aux protocoles de nettoyage et certifiées ISO 14001 &amp; VCA. Elles interviennent avec des produits certifiés écologiques.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Une prestation exécutée selon un protocole standardisé, pas selon la méthode de chaque intervenant.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+<h3>Assurance responsabilité professionnelle</h3>
+<p>Nos interventions sont couvertes par une assurance responsabilité civile professionnelle.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Une intervention encadrée juridiquement, sans risque financier pour vous en cas d'incident.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><line x1="4" x2="4" y1="21" y2="14"></line><line x1="4" x2="4" y1="10" y2="3"></line><line x1="12" x2="12" y1="21" y2="12"></line><line x1="12" x2="12" y1="8" y2="3"></line><line x1="20" x2="20" y1="21" y2="16"></line><line x1="20" x2="20" y1="12" y2="3"></line><line x1="1" x2="7" y1="14" y2="14"></line><line x1="9" x2="15" y1="8" y2="8"></line><line x1="17" x2="23" y1="16" y2="16"></line></svg></div>
+<h3>Contrat flexible</h3>
+<p>La fréquence, les horaires et le périmètre peuvent être ajustés en cours de contrat selon l'évolution de votre activité.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Un contrat qui s'adapte à vous, plutôt qu'un engagement rigide sur la durée.</p></div>
+</div>
+<div class="trust-card">
+<div class="trust-icon"><svg viewbox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></div>
+<h3>Réactivité en cas d'imprévu</h3>
+<p>Pour une situation urgente ou un imprévu, nous nous organisons pour intervenir rapidement, en dehors du planning habituel si nécessaire.</p>
+<div class="trust-benefit"><span>Ce que cela change pour vous</span><p>Une solution rapide en cas d'imprévu, sans attendre le prochain passage prévu.</p></div>
+</div>
+</div>
+</div>
+</section>
 <section class="final-cta">
 <div class="final-cta-inner" data-reveal="">
 <span class="eyebrow" data-i18n="_common.cta.eyebrow_delegate" style="display:inline-flex;margin-bottom:28px">Prêt à déléguer ?</span>
@@ -344,6 +555,7 @@
 const obs=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target)}})},{threshold:0.10});
 document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
 </script>
+<script src="../assets/nr-price-calculator.js" defer></script>
 <script src="../lang.js"></script>
 </body>
 </html>

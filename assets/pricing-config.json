@@ -1,0 +1,28 @@
+{
+  "version": "2026-07-20",
+  "devise": "EUR",
+  "fourchette_marge": 0.15,
+  "secteurs": {
+    "bureaux": { "label": "Nettoyage de bureaux", "coefficient": 1.0 },
+    "magasins": { "label": "Magasins & commerces", "coefficient": 0.95 },
+    "coworking": { "label": "Espaces de coworking", "coefficient": 1.0 },
+    "cabinet-medical": { "label": "Cabinet médical", "coefficient": 1.3 },
+    "pharmacies": { "label": "Pharmacies", "coefficient": 1.25 },
+    "hotelier": { "label": "Hôtellerie & hébergement", "coefficient": 1.15 },
+    "industriel": { "label": "Site industriel", "coefficient": 1.1 },
+    "autres": { "label": "Autre secteur", "coefficient": 1.05 }
+  },
+  "surfaces": {
+    "lt100": { "label": "Moins de 100 m²", "base": 240 },
+    "100-500": { "label": "100 à 500 m²", "base": 460 },
+    "500-2000": { "label": "500 à 2 000 m²", "base": 1050 },
+    "gt2000": { "label": "Plus de 2 000 m²", "base": 2200 }
+  },
+  "frequences": {
+    "quotidien": { "label": "Quotidien (5j/7)", "coefficient": 1.9 },
+    "hebdomadaire": { "label": "Hebdomadaire", "coefficient": 1.0 },
+    "bimensuel": { "label": "Bi-mensuel", "coefficient": 0.6 },
+    "mensuel": { "label": "Mensuel", "coefficient": 0.35 },
+    "ponctuel": { "label": "Ponctuel", "ponctuel": true }
+  }
+}
