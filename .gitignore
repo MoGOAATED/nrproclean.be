@@ -2,3 +2,10 @@ temporary screenshots/
 cleanpower.be_.png
 .claude/
 *.DS_Store
+
+# Documents de travail internes (ne jamais publier)
+*.pdf
+*.docx
+
+# Logos destinés aux campagnes Google Ads (non utilisés sur le site)
+Brand_assets/NR-logo-google-ads-*.png

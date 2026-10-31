@@ -11,7 +11,8 @@
     try { localStorage.setItem(CONSENT_KEY, v); } catch (e) {}
   }
   function isSubfolder() {
-    return window.location.pathname.indexOf('/services/') !== -1 || window.location.pathname.indexOf('/zones/') !== -1;
+    var p = window.location.pathname;
+    return p.indexOf('/services/') !== -1 || p.indexOf('/zones/') !== -1 || p.indexOf('/outils/') !== -1;
   }
   function rootPath(p) { return (isSubfolder() ? '../' : '') + p; }
 
@@ -63,6 +64,12 @@
     else if (a.classList.contains('nav-cta')) trackEvent('click_cta_devis', { link: href });
   });
   document.addEventListener('nr-form-submitted', function () { trackEvent('form_submit', {}); });
+  /* Pont générique pour tous les outils interactifs (Web Components) : chaque outil
+     émet un événement nr-tool-event plutôt que d'appeler trackEvent lui-même, pour
+     ne jamais dupliquer la logique de consentement RGPD dans chaque composant. */
+  document.addEventListener('nr-tool-event', function (e) {
+    if (e.detail && e.detail.name) trackEvent(e.detail.name, e.detail.params);
+  });
 
   /* ── Bannière cookies ── */
   var css = '.nr-cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;'
